@@ -47,6 +47,24 @@ a{
     z-index: 99;
 }
 
+/* CAROUSEL */
+.hero_carousel_container{
+}
+
+.carousel__container{
+    position: relative;
+    height: 80vh;
+}
+.carousel__title{
+    position: absolute;
+    top: 50%;
+}
+.carousel_img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 /* MAIN SECTION */
 .main__container {
     margin-top: 12vh;
@@ -59,9 +77,63 @@ a{
     width: 500px;
 }
 .hero_text_container {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 700;
 }
+.hero_text_title{
+    display: flex;
+    flex-direction: column;
+}
+
+.hero_digital_service_txt_1{
+    animation: movetext 300ms ease-in-out;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+
+.hero_digital_service_txt_2{
+    animation: movetext 400ms ease-in-out;
+    margin-left: 20px;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+.hero_digital_service_txt_3{
+    animation: movetext 500ms ease-in-out;
+    margin-left: 40px;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+.hero_digital_service_txt_4{
+    animation: movetext 600ms ease-in-out;
+    margin-left: 60px;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+.hero_digital_service_txt_5{
+    animation: movetext 700ms ease-in-out;
+    margin-left: 80px;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+.hero_digital_service_txt_6{
+    animation: movetext 800ms ease-in-out;
+    margin-left: 100px;
+}
+@keyframes movetext{
+    0% {transform: translateX(60px);}
+    100% {transform: translateX(0px);}
+}
+
 .hero_container span {
     background: -webkit-linear-gradient(bottom right, #8f8f8f, #fffefe);
     -webkit-background-clip: text;
@@ -71,6 +143,9 @@ a{
     font-size: 42px !important;
     font-weight: 900;
     color: #ffffff !important;
+}
+.wrap{
+    font-size: 32px;
 }
 
 /* ACHIEVEMENTS SECTION */
