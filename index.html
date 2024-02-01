@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="roadmap.css">
-    <title>IBlink</title>
+    <link rel="stylesheet" href="/IT_falling_style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Small Planet</title>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg nav__container content__wrapper">
         <div class="d-flex justify-content-between align-items-center w-100 ">
-            <div>IBLINK LOGO</div>
+            <div>SmallPlanet LOGO</div>
             <button class="navbar-toggler bg-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon  ">---</span>
             </button>
@@ -39,20 +44,38 @@
     
     <main class="main__container content__wrapper ">
 
-        <!-- HERO SECTION -->
-        <div class="d-flex w-100 flex-md-row hero_container">
+
+        <div class="d-flex flex-column overflow-hidden justify-content-center align-items-center w-100 hero__section__container">
+            <h2>When it comes to</h2>
+            <h1 class="animate__animated animate__lightSpeedInRight animate__delay-1s">Digital Transformation</h1>
+            <h3>Every It Provides</h3>
+            <div class="it__services__falling__container">
+                <div class="end__automation__card it__card">End to End Automation</div>
+                <div class="sofware__dev__card it__card">Software Development</div>
+                <div class="integration__card it__card">Integration with Website/s</div>
+                <div class="andriod__dev__card it__card">Android App development</div>
+                <div class="sms__card it__card">SMS / Email engines</div>
+                <div class="erp_int__card it__card">ERP Integration</div>
+            
+            </div>
+        </div>
+
+
+
+        <!-- HERO SECTION PARALLAX -->
+        <!-- <div class="d-flex w-100 flex-md-row hero_container">
             <div class="parallax__container">
                 <div class="parallax">
                     <div class="parallax__layer parallax__layer--back">
                         <div class="w-100">
                             <div class="parallex__text__container">
-                                <span >When it comes to</span><br />
+                                <span class="animate__animated animate__bounce">When it comes to</span><br />
                                 <span class="digital__text">Digital Transformation</span><br/>
                                 <span>Every IT provider does</span><br>
                             </div>
                             <div class="parallax__points__container w-100">
                                 <ul class="m-0 p-0 row gap-4">
-                                    <li class="col text-center">End to End Automation</li>
+                                    <li class="col text-center animate__animated animate__bounce animate__infinite">End to End Automation</li>
                                     <li class="col text-center">Software Development</li>
                                     <li class="col text-center ">Integration with Website/s</li>
                                     <li class="col text-center ">Android App development</li>
@@ -73,7 +96,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- ACHEIVEMENT SECTION -->
         <div class="achievement__container d-flex justify-content-center align-items-center flex-column w-100 gap-3">

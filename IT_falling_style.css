@@ -1,0 +1,436 @@
+.hero__section__container{
+    height: 85vh;
+}
+
+.hero__section__container h2{
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.hero__section__container h1{
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.it__card{
+    border: 2px solid skyblue;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0px 0px 0 rgb(242, 242, 243);
+    backdrop-filter: blur( 70px );
+    -webkit-backdrop-filter: blur( 20px );
+}
+
+.it__services__falling__container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+/* .it__services__falling__container div {
+    visibility: hidden;
+    animation: 1s fadeIn;
+}
+
+@keyframes fadeIn {
+    99%{
+        visibility: hidden;
+    }
+} */
+
+
+.end__automation__card{
+    animation: endToEndAuto 900ms;
+}
+
+.sofware__dev__card{
+    position: absolute;
+    animation: softwareDev 1000ms;
+    transform: translate(150px, -30px) rotate(20deg);
+}
+
+.integration__card{
+    position: absolute;
+    animation: integrationcard 1200ms;
+    transform: translate(-150px, -30px) rotate(-20deg);
+}
+
+.andriod__dev__card{
+    position: absolute;
+    animation: andriodDev 1600ms;
+    transform: translate(-10px, -120px) rotate(10deg);
+}
+
+.sms__card{
+    position: absolute;
+    animation: smsCard 1800ms;
+    transform: translate(-194px, -110px) rotate(-52deg);
+}
+
+.erp_int__card{
+    position: absolute;
+    animation: erpCard 2000ms;
+    transform: translate(192px, -85px) rotate(36deg);
+}
+
+@keyframes endToEndAuto {
+    0% {
+        -webkit-transform: translateY(-905px);
+                transform: translateY(-905px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        opacity: 1;
+      }
+      24% {
+        opacity: 1;
+      }
+      40% {
+        -webkit-transform: translateY(-24px);
+                transform: translateY(-24px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      65% {
+        -webkit-transform: translateY(-12px);
+                transform: translateY(-12px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      82% {
+        -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      93% {
+        -webkit-transform: translateY(-4px);
+                transform: translateY(-4px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      25%,
+      55%,
+      75%,
+      87% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+      100% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        opacity: 1;
+      }
+}
+
+@keyframes softwareDev {
+    0% {
+        transform: translate(150px, -905px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        animation-delay: 300ms;
+    }
+    80%{
+        transform: translate(150px, -30px);
+        animation-timing-function: ease-in;
+        animation-duration: 40000ms;
+    }
+    90%{
+        transform: translate(150px, -32px) rotate(20deg);
+        animation-timing-function: ease-in;
+        animation-duration: 2000ms;
+    }
+    95%{
+        transform: translate(150px, -34px) rotate(22deg);
+        animation-timing-function: ease-in;
+        animation-duration: 2000ms;
+    }
+    100%{
+        transform: translate(150px, -30px) rotate(20deg);
+        animation-timing-function: ease-in;
+    }
+      
+}
+
+@keyframes integrationcard {
+    0% {
+        transform: translate(-150px, -905px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        animation-duration: 1000s;
+    }
+    80%{
+        transform: translate(-150px, -30px);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        transform: translate(-150px, -32px) rotate(-18deg);
+        animation-timing-function: ease-in;
+        
+    }
+    95%{
+        transform: translate(-150px, -34px) rotate(-18deg);
+        animation-timing-function: ease-in;
+        
+    }
+    100%{
+        transform: translate(-150px, -30px) rotate(-18deg);
+        animation-timing-function: ease-in;
+    }
+      
+}
+
+@keyframes andriodDev {
+    0% {
+        transform: translate(-10px, -905px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        animation-delay: 4000ms;
+    }
+    80%{
+        transform: translate(-10px, -120px);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        transform: translate(-10px, -122px) rotate(12deg);
+        animation-timing-function: ease-in;
+    }
+    95%{
+        transform: translate(-10px, -124px) rotate(14deg);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: translate(-10px, -120px) rotate(10deg);
+        animation-timing-function: ease-in;
+    }
+      
+}
+
+@keyframes smsCard {
+    0% {
+        transform: translate(-194px, -905px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        animation-delay: 8000ms;
+    }
+    80%{
+        transform: translate(-194px, -110px) rotate(-52deg);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        transform: translate(-194px, -112px) rotate(-52deg);
+        animation-timing-function: ease-in;
+    }
+    95%{
+        transform: translate(-194px, -114px) rotate(-52deg);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: translate(-194px, -110px) rotate(-52deg);
+        animation-timing-function: ease-in;
+    }
+      
+}
+
+@keyframes erpCard {
+    0% {
+        transform: translate(192px, -905px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        animation-delay: 8000ms;
+    }
+    80%{
+        transform: translate(192px, -85px) rotate(32deg);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        transform: translate(192px, -88px) rotate(34deg);
+        animation-timing-function: ease-in;
+    }
+    95%{
+        transform: translate(192px, -85px) rotate(35deg);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: translate(192px, -85px) rotate(36deg);
+        animation-timing-function: ease-in;
+    }
+      
+}
+
+
+
+@media screen and (max-width: 450px) {
+    .it__services__falling__container div{
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+    .hero__section__container h1{
+        font-size: 40px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+    }
+    .hero__section__container h2{
+        width: 100%;
+        font-size: 24px;
+    }
+    .sofware__dev__card{
+        transform: translate(100px, -30px) rotate(20deg);
+    }
+    .integration__card{
+        transform: translate(-90px, -30px) rotate(-20deg);
+    }
+    .andriod__dev__card{
+        transform: translate(-5px, -90px) rotate(6deg);
+    }
+    .sms__card{
+        transform: translate(-124px, -90px) rotate(-52deg);
+    }
+    .erp_int__card{
+        transform: translate(118px, -80px) rotate(40deg);
+    }
+    
+    @keyframes softwareDev {
+        0% {
+            transform: translate(100px, -905px);
+            animation-timing-function: ease-in;
+            opacity: 1;
+            animation-delay: 300ms;
+        }
+        80%{
+            transform: translate(100px, -30px);
+            animation-timing-function: ease-in;
+            animation-duration: 40000ms;
+        }
+        90%{
+            transform: translate(100px, -32px) rotate(20deg);
+            animation-timing-function: ease-in;
+            animation-duration: 2000ms;
+        }
+        95%{
+            transform: translate(100px, -34px) rotate(22deg);
+            animation-timing-function: ease-in;
+            animation-duration: 2000ms;
+        }
+        100%{
+            transform: translate(100px, -30px) rotate(20deg);
+            animation-timing-function: ease-in;
+        }
+          
+    }
+    
+    @keyframes integrationcard {
+        0% {
+            transform: translate(-90px, -905px);
+            animation-timing-function: ease-in;
+            opacity: 1;
+            animation-duration: 1000s;
+        }
+        80%{
+            transform: translate(-90px, -30px);
+            animation-timing-function: ease-in;
+        }
+        90%{
+            transform: translate(-90px, -32px) rotate(-18deg);
+            animation-timing-function: ease-in;
+            
+        }
+        95%{
+            transform: translate(-90px, -34px) rotate(-18deg);
+            animation-timing-function: ease-in;
+            
+        }
+        100%{
+            transform: translate(-90px, -30px) rotate(-18deg);
+            animation-timing-function: ease-in;
+        }
+          
+    }
+    
+    @keyframes andriodDev {
+        0% {
+            transform: translate(-5px, -905px);
+            animation-timing-function: ease-in;
+            opacity: 1;
+            animation-delay: 4000ms;
+        }
+        80%{
+            transform: translate(-5px, -94px);
+            animation-timing-function: ease-in;
+        }
+        90%{
+            transform: translate(-5px, -92px) rotate(8deg);
+            animation-timing-function: ease-in;
+        }
+        95%{
+            transform: translate(-5px, -93px) rotate(5deg);
+            animation-timing-function: ease-in;
+        }
+        100%{
+            transform: translate(-5px, -90px) rotate(6deg);
+            animation-timing-function: ease-in;
+        }
+          
+    }
+    
+    @keyframes smsCard {
+        0% {
+            transform: translate(-124px, -905px);
+            animation-timing-function: ease-in;
+            opacity: 1;
+            animation-delay: 8000ms;
+        }
+        80%{
+            transform: translate(-124px, -94px) rotate(-45deg);
+            animation-timing-function: ease-in;
+        }
+        90%{
+            transform: translate(-124px, -92px) rotate(-51deg);
+            animation-timing-function: ease-in;
+        }
+        95%{
+            transform: translate(-124px, -93px) rotate(-52deg);
+            animation-timing-function: ease-in;
+        }
+        100%{
+            transform: translate(-124px, -90px) rotate(-52deg);
+            animation-timing-function: ease-in;
+        }
+          
+    }
+    
+    @keyframes erpCard {
+        0% {
+            transform: translate(118px, -905px);
+            animation-timing-function: ease-in;
+            opacity: 1;
+            animation-delay: 8000ms;
+        }
+        80%{
+            transform: translate(118px, -85px) rotate(32deg);
+            animation-timing-function: ease-in;
+        }
+        90%{
+            transform: translate(118px, -83px) rotate(34deg);
+            animation-timing-function: ease-in;
+        }
+        95%{
+            transform: translate(118px, -84px) rotate(37deg);
+            animation-timing-function: ease-in;
+        }
+        100%{
+            transform: translate(118px, -80px) rotate(38deg);
+            animation-timing-function: ease-in;
+        }
+          
+    }
+}
