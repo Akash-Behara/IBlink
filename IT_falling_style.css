@@ -33,12 +33,16 @@
     width: 100%;
     justify-content: end;
     align-items: center;
-    transform: translate(10px, 60px);
+    transform: translate(-5px, 60px);
     gap: 2px;
 }
 .then_how_text{
     font-size: 30px;
     font-weight: 700;
+}
+.click_icon{
+    width: 10px;
+    transform: translate(-50px, 10px);
 }
 .anim__content:hover{
     scale: 1.01;
@@ -51,6 +55,7 @@
     font-weight: 700;
     cursor: pointer;
     width: 250px;
+    animation: scaleText 3000ms linear infinite;
     /* transform: translate(-50%, -50%); */
 }
 .anim__content h2{
@@ -65,7 +70,7 @@
 }
 .anim__content h2:nth-child(2) {
     color: #03a9f4;
-    animation: animate 4s ease-in-out infinite;
+    animation: animate 3s ease-in-out infinite;
 }
 @keyframes animate {
     0%,
@@ -95,6 +100,17 @@
         100% 100%,
         0% 100%
       );
+    }
+}
+@keyframes scaleText{
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.01;
+    }
+    100%{
+        scale: 1;
     }
 }
 
