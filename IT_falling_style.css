@@ -428,6 +428,12 @@
 
 
 @media screen and (max-width: 450px) {
+    .hero__main__container{
+        margin-top: -20px;
+    }
+    .it__services__falling__container{
+        margin-top: -45px;
+    }
     .it__services__falling__container div{
         font-size: 11px;
         padding: 10px 5px;
@@ -592,7 +598,7 @@
           
     }
     .how_are_diff_container{
-        gap: 0;
+        gap: 1px;
         align-items: end;
     }
     .then_how_text{
