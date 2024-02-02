@@ -16,17 +16,7 @@
     font-weight: 900;
     letter-spacing: 1.5px;
     text-transform: capitalize;
-    animation: digitalText 2000ms;
 }
-@keyframes digitalText{
-    0%{
-        transform: translateX(900px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
 
 .how_are_diff_container{
     display: flex;
