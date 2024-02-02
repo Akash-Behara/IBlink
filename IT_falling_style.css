@@ -1,3 +1,7 @@
+.hero__main__container{
+    position: relative;
+}
+
 .hero__section__container{
     height: 85vh;
 }
@@ -11,7 +15,89 @@
     font-size: 44px;
     font-weight: 900;
     letter-spacing: 1.5px;
+    text-transform: capitalize;
+    animation: digitalText 2000ms;
 }
+@keyframes digitalText{
+    0%{
+        transform: translateX(900px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+.how_are_diff_container{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    transform: translate(10px, 60px);
+    gap: 2px;
+}
+.then_how_text{
+    font-size: 30px;
+    font-weight: 700;
+}
+.anim__content:hover{
+    scale: 1.01;
+    transition: 400ms;
+}
+.anim__content{
+    position: relative;
+    text-align: end;
+    /* font-size: 24px; */
+    font-weight: 700;
+    cursor: pointer;
+    width: 250px;
+    /* transform: translate(-50%, -50%); */
+}
+.anim__content h2{
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    transform: translate(0, -50%);
+}
+.anim__content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+}
+.anim__content h2:nth-child(2) {
+    color: #03a9f4;
+    animation: animate 4s ease-in-out infinite;
+}
+@keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+}
+
 
 .it__card{
     border: 2px solid skyblue;
@@ -25,10 +111,10 @@
 
 .it__services__falling__container{
     width: 100%;
-    height: 100%;
+    height: 40%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     position: relative;
     gap: 10px;
 }
@@ -46,36 +132,36 @@
 
 
 .end__automation__card{
-    animation: endToEndAuto 900ms;
+    animation: endToEndAuto 3000ms;
 }
 
 .sofware__dev__card{
     position: absolute;
-    animation: softwareDev 1000ms;
+    animation: softwareDev 3100ms;
     transform: translate(150px, -30px) rotate(20deg);
 }
 
 .integration__card{
     position: absolute;
-    animation: integrationcard 1200ms;
+    animation: integrationcard 3200ms;
     transform: translate(-150px, -30px) rotate(-20deg);
 }
 
 .andriod__dev__card{
     position: absolute;
-    animation: andriodDev 1600ms;
+    animation: andriodDev 3300ms;
     transform: translate(-10px, -120px) rotate(10deg);
 }
 
 .sms__card{
     position: absolute;
-    animation: smsCard 1800ms;
+    animation: smsCard 3400ms;
     transform: translate(-194px, -110px) rotate(-52deg);
 }
 
 .erp_int__card{
     position: absolute;
-    animation: erpCard 2000ms;
+    animation: erpCard 3600ms;
     transform: translate(192px, -85px) rotate(36deg);
 }
 
@@ -166,27 +252,35 @@
         transform: translate(-150px, -905px);
         animation-timing-function: ease-in;
         opacity: 1;
-        animation-duration: 1000s;
+    }
+    70%{
+        transform: translate(-150px, -34px);
+        animation-timing-function: ease-in;
     }
     80%{
-        transform: translate(-150px, -30px);
+        transform: translate(-150px, -34px) rotate(-18deg);
         animation-timing-function: ease-in;
     }
     90%{
         transform: translate(-150px, -32px) rotate(-18deg);
         animation-timing-function: ease-in;
-        
     }
     95%{
+        transform: translate(-150px, -30px) rotate(-18deg);
+        animation-timing-function: ease-out;
+    }
+    97%{
         transform: translate(-150px, -34px) rotate(-18deg);
-        animation-timing-function: ease-in;
-        
+        animation-timing-function: ease-out;
+    }
+    99%{
+        transform: translate(-150px, -30px) rotate(-18deg);
+        animation-timing-function: ease-out;
     }
     100%{
         transform: translate(-150px, -30px) rotate(-18deg);
-        animation-timing-function: ease-in;
+        animation-timing-function: ease-out;
     }
-      
 }
 
 @keyframes andriodDev {
@@ -268,6 +362,69 @@
 }
 
 
+/* METHODOLOGY SECTION */
+.method__container{
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.method__container h1{
+    font-size: 64px;
+	/* animation: text-shadow-drop-center 8s linear infinite alternate both; */
+}
+.method__container p{
+    width: 500px;
+    font-size: 14px;
+    color: lightgray;
+}
+
+.back_btn_method{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transform: translateY(200px);
+}
+.back_btn_method p{
+    width: 100px !important;
+    cursor: pointer;
+}
+
+@keyframes text-shadow-drop-center {
+    0% {
+        color: rgb(25, 220, 234);
+        background-clip: text;
+        text-shadow: 0 0 0 rgba(25, 220, 234, 0.5);
+      }
+      25% {
+        color: #b22cff;
+        background-clip: text;
+        text-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+      50% {
+        color: #ea2222;
+        background-clip: text;
+        text-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+      75% {
+        color: #f5be10;        
+        background-clip: text;
+        text-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+      100% {
+        color: #3bd80d;
+        background-clip: text;
+        text-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+}
+
 
 @media screen and (max-width: 450px) {
     .it__services__falling__container div{
@@ -275,7 +432,7 @@
         padding: 10px 5px;
     }
     .hero__section__container h1{
-        font-size: 40px;
+        font-size: 36px;
         font-weight: 900;
         letter-spacing: 1.5px;
     }
@@ -432,5 +589,28 @@
             animation-timing-function: ease-in;
         }
           
+    }
+    .how_are_diff_container{
+        gap: 0;
+        align-items: end;
+    }
+    .then_how_text{
+        font-size: 18px;
+        transform: translate(0, 15px);
+    }
+    .anim__content{
+        width: 180px;
+        transform: translate(-10px, 0);
+    }
+    .anim__content h2{
+        font-size: 22px;
+    }
+
+    .method__container h1{
+        font-size: 34px;
+    }
+    .method__container p{
+        font-size: 14px;
+        width: 250px;
     }
 }
