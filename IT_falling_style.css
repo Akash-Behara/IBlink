@@ -103,10 +103,11 @@
     border: 2px solid skyblue;
     padding: 10px 20px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0px 0px 0 rgb(242, 242, 243);
-    backdrop-filter: blur( 70px );
-    -webkit-backdrop-filter: blur( 20px );
+    background: rgba(82, 82, 82, 0.166);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+    border-radius: 10px;
 }
 
 .it__services__falling__container{
