@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
 
 
-html{
-    /* height: 100vh; */
-    /* overflow: hidden; */
-}
 body{
     background: #000;
     font-family: 'Poppins', sans-serif;
     color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 *{
@@ -21,367 +19,254 @@ body{
     padding: 0;
 }
 
-a{
-    text-decoration: none;
-}
-
-.content__wrapper {
-    padding: 10px 120px;
-}
-
-.section__divider{
-    height: 2px;
-    border-radius: 20px;
-    margin: 20px 0px;
-    background: #57c5b6;
+.Section__divider{
+    border: 2px solid red;
+    margin: 40px 20px;
+    border-radius: 10px;
 }
 
 /* NAVBAR SECTION */
-.nav__container {
-    width: 100%;
-    height: 12vh;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0px 0px 0 rgb(242, 242, 243);
-    backdrop-filter: blur( 70px );
-    -webkit-backdrop-filter: blur( 20px );
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 0 0 10px 10px;
+.Nav__Container{
+    padding: 20px 40px;
+    background: #000;
+    position: sticky;
     z-index: 99;
 }
 
-
-
-.hero__section__container{
-    width: 100%;
-    height: 100%;
-    margin-top: 100px;
+/* HERO SECTION */
+.Hero__Container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
 }
-
-/* PARALLAX SECTION */
-.parallax__container{
-    width: 100vw;
-    height: 80vh;
-}
-.parallax {
-    perspective: 1px;
-    height: 80vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-.parallax::-webkit-scrollbar{
-    display: none;
-}
-.parallax__layer {
+.Hero__BG_svg{
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
 }
-.parallax__layer--base {
-    transform: translateZ(0.8);
-    transform: translateY(-50px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 140vh;
+.Hero__txt__container{
+    margin-top: 60px;
+    text-align: center;
 }
-.parallax__layer--back {
-/* height: 50vh; */
-    transform: translateZ(-0.2px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-}
-.parallex__text__container{
-    font-size: 55px;
-}
-.parallax__diff_text{
-    font-size: 33px;
-    font-weight: 700;
-}
-.parallax__methodology_text{
-    transform: translateY(300px);
-    font-size: 50px;
+.Digital__txt{
+    font-size: 60px !important;
     font-weight: 900;
 }
-/* .parallax__points__container ul {
+
+
+/* ABOUT US SECTION */
+.AboutUs__Container{
+    background: #000;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 40px;
+    height: 50vh;
+}
+
+/* ACHIEVEMENT SECTION */
+.Achievement__Container{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+}
+.Achievement__Card__Container{
+    display: flex;
+    padding: 10px 40px;
     gap: 20px;
-} */
-
-.parallax__points__container ul li{
-    border: 2px solid #fff;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 14px 0px;
-    border-radius: 5px;
-    box-shadow: 0 0px 0px 0 rgb(242, 242, 243);
-    backdrop-filter: blur( 70px );
-    -webkit-backdrop-filter: blur( 20px );
 }
-.sig__methodology_text{
-    text-transform: capitalize;
+.Achievement__Card{
+    border: 1px solid yellow;
+    padding: 0 20px;
+    border-radius: 10px;
+}
+.Achievement__Card p {
+    width: 200px;
 }
 
-
- 
-/* MAIN SECTION */
-
-
-
-
-/* ACHIEVEMENTS SECTION */
-.achievement__container{
-    margin-top: 150px;
-    min-height: 100vh;
+/* SERVICES SECTION */
+.Services__Container{
+    background: #000;
+    /* height: 100vh; */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-direction: column;
 }
-.achievement__container h2 {
-    font-size: 32px;
-    font-weight: 800;
-}
-.achievement_card{
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+.Services__Card__Container{
+    gap: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
-.achievement_card img {
+.Service__Card{
+    position: relative;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    width: 600px;
+    border-radius: 20px;
+}
+.Service__circle__container{
     width: 150px;
-    margin-top: 30px;
+    height: 150px;
+    border-radius: 9999px;
+    border: 3px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
 }
-.achievement_card div {
-    padding: 20px;
+.Outer__Circle__Container{
+    background: #000;
+    width: 150px;
+    height: 150px;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.services_img_1{
+    width: 60px;
+}
+.services_img_2{
+    width: 60px;
+}
+.Service__Card__content__Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
     text-align: center;
 }
 
-/* ROAD SECTON */
-.road__container{
-    margin-top: 150px;
-}
 
-/* DEMO SECTION */
-.demo__container {
-    margin-top: 150px;
-}
-
-
-/* MILESTONE SECTION */
-.milestone__container{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.milestone__path{
-    background-color: #2e645d;
-}
-.milestone__circle{
-    width: 20px;
-    height: 20px;
-    border-radius: 9999px;
-    background: #57c5b6;
-}
-/* .triangle {
-    border: 1px solid #57c5b6;
-    width: 0; 
-    height: 0; 
-    border-top: 0px;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid #9C19E0;
-    transform: translate(-10px, 20px);
-} */
-
-.milestone__card{
-    width: 240px;
-    height: 140px;
-    border-radius: 5px;
-    border: 2px solid #57c5b6;
+/* HERO CANVAS SECTION */
+.custom-div {
     position: absolute;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0px 0px 0 rgb(242, 242, 243);
-    backdrop-filter: blur( 70px );
-    -webkit-backdrop-filter: blur( 20px );
     padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    z-index: 999;
 }
 
-.mile_card_1{
-    transform: translateY(100px);
-}
-.mile_card_2{
-    transform: translateY(-100px);
-}
-.mile_card_3{
-    transform: translateY(100px);
-}
-.mile_card_4{
-    transform: translateY(-100px);
-}
-.mile_card_5{
-    transform: translateY(100px);
-}
-.mile_card_6{
-    transform: translateY(-100px);
-}
+canvas {
+    /* background: #000 !important; */
 
-.milestone_card_date{
-    font-size: 22px;
-    font-weight: 700;
 }
-
-.milestone__card p{
-    font-size: 14px;
+.Hero__Services__Container__Canvas{
+    width: 500px;
+    height: 400px;
+    display: block;
+    /* background: #000 !important; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.methodology__txt{
+    font-size: 45px;
+    font-weight: 900;
+    color: white !important;
+    text-align: center;
+    visibility: hidden;
 }
 
 
-
-
-/* SERVICES */
-.services__content__container{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 100px;
-}
-.services__content__container:nth-child(4){
-    margin-top: 140px;
-}
-.services_title_color{
-    color: #9C19E0;
-    font-weight: 800;
-    padding: 0px 5px;
-}
-.services_img__container{
-    display: flex;
-    gap: 10px;
-    transform: translateX(80px);
-}
-.services_img__container:nth-child(2){
-    transform: translateX(-80px);
-}
-.services_img_1{
-    width: 120px;
-    height: 150px;
-}
-.services_img_2{
-    width: 100px;
-    height: 120px;
-}
-.material-symbols-outlined{
-    color: #57c5b6;
-}
-
-
-
-
-
-/* MOBILE VIEW */
 @media screen and (max-width: 450px) {
-    .content__wrapper{
-        padding: 10px 20px;
-    }
-    .services__content__container{
-        display: flex;
-        flex-direction: column;
-    }
-    .services_img__container{
-        order: 1;
-    }
-    .services_img_1{
-        width: 100px;
-        height: 100px;
-    }
-    .services_img_2{
-        width: 100px;
-        height: 100px;
-    }
-    .services__content__container{
-        text-align: center;
-    }
-    .services__content__container:nth-child(4){
-        margin-top: 100px;
-    }
-    .services_img__container{
-        transform: translateX(0px);
-    }
-    .services_img__container:nth-child(2){
-        transform: translateX(0px);
-    }
-}
-
-/* TAB VIEW */
-@media screen and (min-width: 500px) and (max-width: 800px){
-    .content__wrapper{
-        padding: 10px 30px;
-    }
-    .services__content__container{
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-
-@media screen and (max-width: 900px) {
-    .hero_img{
+    canvas{
         width: 300px;
     }
-    .hero_text_container{
-        font-size: 22px;
+    .Hero__Services__Container__Canvas{
+        width: 300px !important;
+        overflow-x: hidden !important;
+    }
+    .Digital__txt{
+        font-size: 28px !important;
+        font-weight: 800;
+    }
+    .methodology__txt{
+        font-size: 28px !important;
+    }
+    .Service__Card{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        padding: 10px 10px;
+    }
+    .Service__circle__container{
+        top: 0;
+        left: 50%;
+    }
+    .Service__Card__content__Container{
+        margin-top: 40px;
+    }
+    .Outer__Circle__Container{
+        width: 100px;
+        height: 100px;
+    }
+    .Service__circle__container{
+        width: 100px;
+        height: 100px;
+    }
+    .services_img_1{
+        width: 34px;
+    }
+    .services_img_2{
+        width: 34px;
+    }
+    .custom-div {
+        padding: 5px 10px;
     }
 }
 
 
-/* SERVICES IMG ANIMATION */
-.services_img_1_move{
-    animation: mover1 1s infinite alternate;
-}
-@keyframes mover1{
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-10px);}
-}
-
-.services_img_2_move{
-    animation: mover2 1s infinite alternate;
-}
-@keyframes mover2{
-    0% {transform: translateY(-10px);}
-    100% {transform: translateY(0px);}
-}
 
 
-/* TYPEWRITER ANIMATION */
-.typewriter {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
+
+.Section__Head__title{
+    font-size:26px; font-weight:700;
+    letter-spacing:5.5px; 
+    text-transform:uppercase; 
+    width:160px; text-align:center; 
+    margin:auto; white-space:nowrap;
+    position: relative;
+    padding-bottom:13px;
 }
-/* The typing effect */
-@keyframes typing {
-from { width: 0 }
-to { width: 100% }
+.Section__Head__title:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
 }
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: orange; }
+.Section__Head__title:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    position:absolute; 
+    right:0; bottom:0;
+    height: 3px;
+    width: 75px;
 }
+
 
 
 /* SCROLLBAR */
