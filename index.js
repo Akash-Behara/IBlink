@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // customDiv.appendChild
             customDiv.className = 'custom-div';
             customDiv.textContent = services[i]
-            customDiv.style.border = `2px solid #2ecc72`;
             customDiv.style.visibility = 'none';
             document.getElementById('Hero__Services__Container__Canvas').appendChild(customDiv);
 
