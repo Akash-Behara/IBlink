@@ -29,7 +29,8 @@ body{
 .Nav__Container{
     padding: 20px 40px;
     background: #000;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     z-index: 99;
 }
 
