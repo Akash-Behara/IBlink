@@ -22,6 +22,7 @@ function hideMethodolgyDiv() {
 let services = ['End to End Automation', 'Software Development', 'Integration with Website/s', 'SMS / Email engines', 'Andriod App Development', 'ERP Integration']
 // let services = ['End to End Automation', 'Software Development']
 document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
     let responsiveWidth;
 
     if(window.innerWidth < 768) {
@@ -141,10 +142,10 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         Matter.World.remove(engine.world, [leftwall, rightwall])
         // Matter.Body.applyForce(collidingBody, { x: 0, y: 0}, { x: -6.5, y: 0 });
-        Matter.Body.setVelocity(collidingBody, { x: -14, y: 0});
+        Matter.Body.setVelocity(collidingBody, { x: -16, y: 0});
         Matter.World.add(engine.world, [collidingBody]);
         methodologBox.style.visibility = 'visible'
-    }, 4000)
+    }, 5500)
 
     setTimeout(() => {
         fallingDivs.forEach((div) => {
