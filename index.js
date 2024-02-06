@@ -19,8 +19,8 @@ function hideMethodolgyDiv() {
 }
 
 
-// let words = ['End to End Automation', 'Software Development', 'Integration with Website/s', 'SMS / Email engines', 'Andriod App Development', 'ERP Integration']
 let services = ['End to End Automation', 'Software Development', 'Integration with Website/s', 'SMS / Email engines', 'Andriod App Development', 'ERP Integration']
+// let services = ['End to End Automation', 'Software Development']
 document.addEventListener('DOMContentLoaded', function () {
     let responsiveWidth;
 
@@ -47,32 +47,32 @@ document.addEventListener('DOMContentLoaded', function () {
         element: document.getElementById('Hero__Services__Container__Canvas'),
         engine: engine,
         options: {
-            width: responsiveWidth,
-            height: 300,
+            width: window.innerWidth > 500 ? 500 : 800,
+            height: window.innerWidth > 500 ? 300 : 800,
             wireframes: false,
             background: 'transparent',
         }
     });
 
     const leftwall =  Matter.Bodies.rectangle(
-        10, // X-coordinate
+        1, // X-coordinate
         0, // Y-coordinate (bottom of the screen)
-        8, // Width (equal to canvas width)
+        1, // Width (equal to canvas width)
         2000,  // Height (adjust as needed)
         { isStatic: true, render: { fillStyle: 'transparent' } } // Set to static and add a fill color
     );
     const rightwall =  Matter.Bodies.rectangle(
-        responsiveWidth, // X-coordinate
+        window.innerWidth > 500 ? 480 : 500, // X-coordinate
         0, // Y-coordinate (bottom of the screen)
-        8, // Width (equal to canvas width)
+        1, // Width (equal to canvas width)
         2000,  // Height (adjust as needed)
         { isStatic: true, render: { fillStyle: 'transparent' } } // Set to static and add a fill color
     );
     const ground =  Matter.Bodies.rectangle(
         250, // X-coordinate
-        responsiveWidth < 500 ? 240 : 310, // Y-coordinate (bottom of the screen)
-        400, // Width (equal to canvas width)
-        1,  // Height (adjust as needed)
+        window.innerWidth > 500 ? 400 : 400, // Y-coordinate (bottom of the screen)
+        800, // Width (equal to canvas width)
+        10,  // Height (adjust as needed)
         { isStatic: true, render: { fillStyle: 'transparent' } } // Set to static and add a fill color
     );
             
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
             customDiv.style.visibility = 'none';
             document.getElementById('Hero__Services__Container__Canvas').appendChild(customDiv);
 
-            let xpos = Math.random() * responsiveWidth;
+            let xpos = window.innerWidth > 500 ? Math.random() * 100 : Math.random() * 100;
             const customBody = Matter.Bodies.rectangle(
                 xpos,
-                0,
-                customDiv.clientWidth + 0.5,
-                customDiv.clientHeight + 0.5,
+                -800,
+                window.innerWidth > 500 ? customDiv.clientWidth : 1200,
+                window.innerWidth > 500 ? customDiv.clientHeight : 800,
                 { restitution: 0.5, friction: 0.1, render: { fillStyle: 'transparent' } }
             );
             customBodies.push(customBody);
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         methodologBox.className = 'methodology__txt'
         const collidingBody = Matter.Bodies.rectangle(
             700, 
-            responsiveWidth < 500 ? 150 : 200,
+            window.innerWidth > 500 ? 280 : 200,
             255, 150,
             // methodologBox.clientWidth, methodologBox.clientHeight,
             { restitution: 0.01, friction: 0.1, density: 0.01, render: { fillStyle: 'transparent' } }
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function () {
         Matter.Events.on(engine, 'afterUpdate', function () {
             fallingDivs.forEach((customDiv, index) => {
                 const customBody = customBodies[index];
-                customDiv.customDiv.style.transform = `translate(${customBody.position.x - (115)}px, ${customBody.position.y - 330}px) rotate(${customBody.angle}rad)`;
+                customDiv.customDiv.style.transform = `translate(${customBody.position.x - (window.innerWidth > 500 ? 110 : 165)}px, ${customBody.position.y - (window.innerWidth > 500 ? 430 : (400))}px) rotate(${customBody.angle}rad)`;
             });
-            methodologBox.style.transform = `translate(${collidingBody.position.x - 200}px, ${collidingBody.position.y - 350}px)`;
+            methodologBox.style.transform = `translate(${collidingBody.position.x -  200}px, ${collidingBody.position.y - (window.innerWidth > 500 ? 450 : 400)}px)`;
             if(document.getElementById('Hero__Services__Container__Canvas') == null){
                 return
             }
@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(() => {
         Matter.World.remove(engine.world, [leftwall, rightwall])
-        Matter.Body.applyForce(collidingBody, { x: -400, y:  responsiveWidth < 500 ? 150 : 200 }, { x: -21.5, y: 0 });
+        // Matter.Body.applyForce(collidingBody, { x: 0, y: 0}, { x: -6.5, y: 0 });
+        Matter.Body.setVelocity(collidingBody, { x: -14, y: 0});
         Matter.World.add(engine.world, [collidingBody]);
         methodologBox.style.visibility = 'visible'
     }, 4000)
