@@ -152,6 +152,8 @@ body{
     display: flex;
     padding: 10px 40px;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .Achievement__Card{
     border: 1px solid yellow;
@@ -242,7 +244,6 @@ body{
 
 canvas {
     /* background: #000 !important; */
-
 }
 .Hero__Services__Container__Canvas{
     width: 500px;
@@ -259,6 +260,57 @@ canvas {
     text-align: center;
     visibility: hidden;
 }
+.Methodology__Txt__Container_anim{
+    min-height: 75vh;
+    min-width: 100vw;
+    /* visibility: hidden; */
+    display: none;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+    padding-top: 50px;
+    animation: methodTxtAnim 6000ms;
+    z-index: 2;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    background: #000;
+    text-align: center;
+}
+.Methodology__Txt__Container_anim h1{
+    font-size: 64px;
+    font-weight: 900;
+}
+.Methodology__SubTxt{
+    font-size: 14px;
+    color: rgba(211, 211, 211, 0.595);
+}
+
+@keyframes methodTxtAnim {
+    0%{
+        transform: translateY(320px);
+        /* width: 200px; */
+        height: 30vh;
+        font-size: 34px;
+        text-align: center;
+        opacity: 0.3;
+    }
+    30%{
+        opacity: 0.5;
+        height: 50vh;
+    }
+    70%{
+        opacity: 0.9;
+        height: 65vh;
+    }
+    100%{
+        transform: translateY(0);
+        width: 100%;
+        display: flex;
+        opacity: 1;
+    }
+}
 
 
 @media screen and (max-width: 450px) {
@@ -266,7 +318,7 @@ canvas {
         width: 300px;
     }
     .Hero__txt__container h2{
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
     }
     .Hero__Services__Container__Canvas{
@@ -274,7 +326,7 @@ canvas {
         overflow-x: hidden !important;
     }
     .Digital__txt{
-        font-size: 28px !important;
+        font-size: 26px !important;
         font-weight: 900;
     }
     .How__Diff__Txt{
@@ -321,6 +373,12 @@ canvas {
     }
     .custom-div {
         padding: 5px 10px;
+    }
+    .Methodology__Txt__Container_anim h1{
+        font-size: 28px;
+    }
+    .Methodology__SubTxt{
+        font-size: 12px;
     }
 }
 

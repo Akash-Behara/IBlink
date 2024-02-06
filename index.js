@@ -79,11 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // setTimeout(() => {
         const fallingDivs = [];
         const customBodies = [];
+        let collidePosition = {};
         for (let i = 0; i < services.length; i++) {
             const canva = document.getElementById('Hero__Services__Container__Canvas');
             const customDiv = document.createElement('div');
             // customDiv.appendChild
             customDiv.className = 'custom-div';
+            customDiv.id = 'custom-div';
             customDiv.textContent = services[i]
             customDiv.style.visibility = 'none';
             document.getElementById('Hero__Services__Container__Canvas').appendChild(customDiv);
@@ -124,7 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 customDiv.customDiv.style.transform = `translate(${customBody.position.x - (115)}px, ${customBody.position.y - 330}px) rotate(${customBody.angle}rad)`;
             });
             methodologBox.style.transform = `translate(${collidingBody.position.x - 200}px, ${collidingBody.position.y - 350}px)`;
+            if(document.getElementById('Hero__Services__Container__Canvas') == null){
+                return
+            }
             document.getElementById('Hero__Services__Container__Canvas').appendChild(methodologBox);
+            collidePosition = { x: collidingBody.position.x, y: collidingBody.position.y }
         });
 
         // Run the renderer
@@ -147,4 +153,24 @@ document.addEventListener('DOMContentLoaded', function () {
         // Matter.Sleeping.set(methodologBox, true);
         // Matter.Body.setPosition(collidingBody, { x: 200, y: 510 })
     }, 6500)
+
+    setTimeout(() => {
+        
+        const newMethodTxt = document.getElementById('Methodology__Txt__Container_anim')
+        newMethodTxt.style.display = 'flex'
+        setTimeout(() => {
+            const heroMainAnimContainer = document.getElementById('Hero__Main_anim__Container');
+            heroMainAnimContainer.classList = 'animate__animated animate__fadeOut'
+            // heroMainAnimContainer.style.visibility = 'hidden';
+            const canvas = document.getElementsByTagName('canvas')[0]
+            const canvas_contents = document.getElementById('Hero__Main_anim__Container')
+            
+            // const canvas_contents = document.getElementById('custom-div')
+            canvas.remove()
+            canvas_contents.remove()
+        }, responsiveWidth < 500 ? 1000 : 2000);
+      
+        // newMethodTxt.classList = 'animate__animated animate__fadeIn'
+        // newMethodTxt.style.transform = `translate(${collidePosition.x}px, ${collidePosition.y}px)`
+    }, 10000)
 });
