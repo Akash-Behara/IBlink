@@ -42,6 +42,7 @@ body{
     align-items: center;
     flex-direction: column;
     padding-top: 80px;
+    height: 95vh;
 }
 .Hero__BG_svg{
     position: absolute;
@@ -272,7 +273,7 @@ canvas {
     padding-top: 50px;
     animation: methodTxtAnim 6000ms;
     z-index: 2;
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     background: #000;
@@ -289,19 +290,19 @@ canvas {
 
 @keyframes methodTxtAnim {
     0%{
-        transform: translateY(320px);
-        /* width: 200px; */
+        transform: translateY(420px);
         height: 30vh;
         font-size: 34px;
         text-align: center;
-        opacity: 0.3;
+        opacity: 0.9;
+        padding: 0px;
     }
     30%{
-        opacity: 0.5;
+        opacity: 1;
         height: 50vh;
     }
     70%{
-        opacity: 0.9;
+        opacity: 1;
         height: 65vh;
     }
     100%{
