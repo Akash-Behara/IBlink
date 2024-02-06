@@ -22,7 +22,7 @@ function hideMethodolgyDiv() {
 let services = ['End to End Automation', 'Software Development', 'Integration with Website/s', 'SMS / Email engines', 'Andriod App Development', 'ERP Integration']
 // let services = ['End to End Automation', 'Software Development']
 document.addEventListener('DOMContentLoaded', function () {
-    AOS.init();
+    // AOS.init();
     let responsiveWidth;
 
     if(window.innerWidth < 768) {
