@@ -68,7 +68,7 @@
 
 .Main__Point__Txt{
   font-weight: 700;
-  font-size: 12px;
+  font-size: 9px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -85,6 +85,19 @@
 .Services__Detail__Point{
   font-weight: 900;
   font-size: 12px;
+}
+.Services__Internet__Txt{
+  font-size: 9px;
+}
+.Services__Txt__size{
+  font-size: 9px;
+}
+.Services__IT_Txt{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 9px;
+  gap: 5px;
 }
 
 
