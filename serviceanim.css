@@ -1,6 +1,9 @@
 :root {
   --cubesize: 350px;
   --cubesizetranslate: 170px;
+  --cubefacecolor: rgba(0, 0, 0, 0.299);
+  --cubeBorderColor: rgba(135, 207, 235, 0.468);
+  --cubeGroundFaceColor: rgba(31, 38, 135, 0.57);
 }
 
 .Services__Content__Wrapper{
@@ -63,6 +66,28 @@
   }
 }
 
+.Main__Point__Txt{
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.Bullet__Point__Circle{
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+}
+
+.Services__Detail__Point{
+  font-weight: 900;
+  font-size: 12px;
+}
+
+
 
 .scene {
   width: var(--cubesize);
@@ -103,39 +128,39 @@
 }
 
 .cube__face--front  {
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: var(--cubefacecolor);
+  box-shadow: 0 8px 32px 0px rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face--right  { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face--back   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.066);
+  background: var(--cubefacecolor);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face--left   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face--top    { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
   background: rgba(82, 82, 82, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -143,10 +168,10 @@
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face--bottom { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: var(--cubeGroundFaceColor);
+  box-shadow: 0 8px 32px 40px rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
@@ -202,50 +227,50 @@ label { margin-right: 10px; }
   
 
 .cube__face2--front  {
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: var(--cubefacecolor);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face2--right  { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face2--back   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.066);
+  background: var(--cubefacecolor);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face2--left   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face2--top    { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face2--bottom { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: var(--cubeGroundFaceColor);
+  box-shadow: 0 8px 32px 40px rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
@@ -300,39 +325,39 @@ label { margin-right: 10px; }
   
 
 .cube__face3--front  {
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: var(--cubefacecolor);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face3--right  { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(0, 0, 0, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face3--back   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.066);
+  background: var(--cubefacecolor);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face3--left   { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
+  background: rgba(3, 3, 3, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face3--top    { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
   background: rgba(82, 82, 82, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -340,10 +365,10 @@ label { margin-right: 10px; }
   -webkit-backdrop-filter: blur( 12px );
 }
 .cube__face3--bottom { 
-  border: 2px solid skyblue;
+  border: 2px solid var(--cubeBorderColor);
   border-radius: 8px;
-  background: rgba(82, 82, 82, 0.166);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: var(--cubeGroundFaceColor);
+  box-shadow: 0 8px 32px 40px rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
 }
