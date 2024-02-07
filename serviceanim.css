@@ -36,6 +36,30 @@
   /* background: #000; */
 }
 
+.services_img_1_move{
+  animation: icons-animation 1000ms alternate infinite ease-in-out;
+}
+.services_img_2_move{
+  animation: icons-animation2 1000ms alternate infinite ease-in-out;
+}
+@keyframes icons-animation {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(10px);
+  }
+}
+
+@keyframes icons-animation2 {
+  0%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
 
 
 .scene {
@@ -230,8 +254,6 @@ label { margin-right: 10px; }
 .cube__face2--left   { transform: rotateY(-90deg) translateZ(var(--cubesizetranslate)); }
 .cube__face2--top    { transform: rotateX( 90deg) translateZ(var(--cubesizetranslate)); }
 .cube__face2--bottom { transform: rotateX(-90deg) translateZ(var(--cubesizetranslate)); }
-
-
 
 
 .scene3 {
