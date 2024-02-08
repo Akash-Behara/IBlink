@@ -1,7 +1,7 @@
 
   #timeline {
     display: flex;
-    background-color: #031625;
+    background-color: #010b12;
   }
   #timeline:hover .tl-item {
     width: 16.3333%;
@@ -11,8 +11,8 @@
     transform: translate3d(0, 0, 0);
     position: relative;
     width: 25%;
-    height: 70vh;
-    min-height: 600px;
+    height: 60vh;
+    min-height: 400px;
     color: #fff;
     overflow: hidden;
     transition: width 0.5s ease;
