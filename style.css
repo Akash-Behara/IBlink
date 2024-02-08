@@ -19,6 +19,11 @@ body{
     padding: 0;
 }
 
+body[data-aos-delay='4000'] [data-aos],
+  [data-aos][data-aos][data-aos-delay='4000'] {
+    transition-delay: 4000ms;
+  }
+
 .Section__divider{
     border: 2px solid #57c5b67e;
     margin: 40px 120px;

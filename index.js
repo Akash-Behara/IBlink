@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     );
             
     // setTimeout(() => {
+    setTimeout(() => {
         const fallingDivs = [];
         const customBodies = [];
         let collidePosition = {};
@@ -118,9 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         Matter.World.add(engine.world, [leftwall, rightwall, ground, ...customBodies]);
         Matter.Engine.run(engine);
-        // Run the engine
-        
-        // Update the position of the custom divs based on the physics simulation
+
         Matter.Events.on(engine, 'afterUpdate', function () {
             fallingDivs.forEach((customDiv, index) => {
                 const customBody = customBodies[index];
@@ -134,47 +133,56 @@ document.addEventListener('DOMContentLoaded', function () {
             collidePosition = { x: collidingBody.position.x, y: collidingBody.position.y }
         });
 
-        // Run the renderer
         Matter.Render.run(render);
+
+        setTimeout(() => {
+            Matter.World.remove(engine.world, [leftwall, rightwall])
+            // Matter.Body.applyForce(collidingBody, { x: 0, y: 0}, { x: -6.5, y: 0 });
+            Matter.Body.setVelocity(collidingBody, { x: -16, y: 0});
+            Matter.World.add(engine.world, [collidingBody]);
+            methodologBox.style.visibility = 'visible'
+        }, 5200)
+    
+        setTimeout(() => {
+            fallingDivs.forEach((div) => {
+                div.customDiv.style.display = 'none'
+            })
+            Matter.World.remove(engine.world, [...customBodies])
+            // Matter.Sleeping.set(methodologBox, true);
+            // Matter.Body.setPosition(collidingBody, { x: 200, y: 510 })
+        }, 6800)
+    
+        setTimeout(() => {
+            
+            const newMethodTxt = document.getElementById('Methodology__Txt__Container_anim')
+            newMethodTxt.style.display = 'flex'
+            setTimeout(() => {
+                const heroMainAnimContainer = document.getElementById('Hero__Main_anim__Container');
+                heroMainAnimContainer.classList = 'animate__animated animate__fadeOut'
+                // heroMainAnimContainer.style.visibility = 'hidden';
+                const canvas = document.getElementsByTagName('canvas')[0]
+                const canvas_contents = document.getElementById('Hero__Main_anim__Container')
+                
+                // const canvas_contents = document.getElementById('custom-div')
+                canvas.remove()
+                canvas_contents.remove()
+            }, responsiveWidth < 500 ? 1000 : 2000);
+          
+            // newMethodTxt.classList = 'animate__animated animate__fadeIn'
+            // newMethodTxt.style.transform = `translate(${collidePosition.x}px, ${collidePosition.y}px)`
+        }, 10000)
+    }, 1000)
+        // Run the engine
+        
+        // Update the position of the custom divs based on the physics simulation
+        
+
+        // Run the renderer
+        
     // }, 1000)
 
 
-    setTimeout(() => {
-        Matter.World.remove(engine.world, [leftwall, rightwall])
-        // Matter.Body.applyForce(collidingBody, { x: 0, y: 0}, { x: -6.5, y: 0 });
-        Matter.Body.setVelocity(collidingBody, { x: -16, y: 0});
-        Matter.World.add(engine.world, [collidingBody]);
-        methodologBox.style.visibility = 'visible'
-    }, 5500)
-
-    setTimeout(() => {
-        fallingDivs.forEach((div) => {
-            div.customDiv.style.display = 'none'
-        })
-        Matter.World.remove(engine.world, [...customBodies])
-        // Matter.Sleeping.set(methodologBox, true);
-        // Matter.Body.setPosition(collidingBody, { x: 200, y: 510 })
-    }, 6500)
-
-    setTimeout(() => {
-        
-        const newMethodTxt = document.getElementById('Methodology__Txt__Container_anim')
-        newMethodTxt.style.display = 'flex'
-        setTimeout(() => {
-            const heroMainAnimContainer = document.getElementById('Hero__Main_anim__Container');
-            heroMainAnimContainer.classList = 'animate__animated animate__fadeOut'
-            // heroMainAnimContainer.style.visibility = 'hidden';
-            const canvas = document.getElementsByTagName('canvas')[0]
-            const canvas_contents = document.getElementById('Hero__Main_anim__Container')
-            
-            // const canvas_contents = document.getElementById('custom-div')
-            canvas.remove()
-            canvas_contents.remove()
-        }, responsiveWidth < 500 ? 1000 : 2000);
-      
-        // newMethodTxt.classList = 'animate__animated animate__fadeIn'
-        // newMethodTxt.style.transform = `translate(${collidePosition.x}px, ${collidePosition.y}px)`
-    }, 10000)
+    
 
     const cube1 = document.querySelector('.cube');
     const cube2 = document.querySelector('.cube2');
