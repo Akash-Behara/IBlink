@@ -404,4 +404,13 @@ label { margin-right: 10px; }
   .Services__Content__Container{
     margin-top: 15px;
   }
+  .scene{
+    margin: 20px;
+  } 
+  .scene2{
+    margin: 30px 20px;
+  } 
+  .scene3{
+    margin: 30px 20px;
+  } 
 }
