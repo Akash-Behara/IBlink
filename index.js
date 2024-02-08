@@ -175,6 +175,51 @@ document.addEventListener('DOMContentLoaded', function () {
         // newMethodTxt.classList = 'animate__animated animate__fadeIn'
         // newMethodTxt.style.transform = `translate(${collidePosition.x}px, ${collidePosition.y}px)`
     }, 10000)
+
+    const cube1 = document.querySelector('.cube');
+    const cube2 = document.querySelector('.cube2');
+    const cube3 = document.querySelector('.cube3');
+    let isVisible = false;
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    function checkVisibilityAndLog() {
+        if (isElementInViewport(cube1) && !isVisible) {
+            isVisible = true;
+            cube1.classList.add('show-back')
+            setTimeout(() => {
+                cube1.classList.remove('show-back')
+            }, 3500)
+        }
+         else if (!isElementInViewport(cube1)) {
+            isVisible = false;
+        }
+
+        if (isElementInViewport(cube2) && !isVisible) {
+            isVisible = true;
+            cube2.classList.add('show-back')
+            setTimeout(() => {
+                cube2.classList.remove('show-back')
+            }, 3500)
+        }
+
+        if (isElementInViewport(cube3) && !isVisible) {
+            isVisible = true;
+            cube3.classList.add('show-back')
+            setTimeout(() => {
+                cube3.classList.remove('show-back')
+            }, 3500)
+        } 
+    }
+    checkVisibilityAndLog();
+    window.addEventListener('scroll', checkVisibilityAndLog);
 });
 
 var cube = document.querySelector('.cube');
@@ -324,3 +369,5 @@ cube3.addEventListener('click', () => {
 })
 
 changeSide3()
+
+
