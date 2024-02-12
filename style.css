@@ -458,6 +458,17 @@ canvas {
     height: 60vh;
     width: 100%;
     background: #000;
+    overflow-x: hidden;
+}
+.Timeline__Iframe::-webkit-scrollbar{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .Timeline__Iframe {
+      width: 80%;
+      max-width: 300px;
+    }
 }
 
 
