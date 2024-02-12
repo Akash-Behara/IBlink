@@ -70,10 +70,10 @@ body{
   right: 0;
 }
 .viewport .scene3D-container .scene3D > div:nth-child(0) {
-  transform: translate3D(-12%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -0.3px));
+  transform: translate3D(-12%, -40%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -0.3px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(1) {
-  transform: translate3D(0%, -36%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -0.3px));
+  transform: translate3D(0%, -16%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -0.3px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(2) {
   transform: translate3D(14%, -22%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -0.3px));
@@ -94,14 +94,14 @@ body{
 /*# sourceMappingURL=scrollanim.css.map */
 
 .Card{
-  /* background: rgba(82, 82, 82, 0.166); */
+  background: rgba(82, 82, 82, 0.166);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 12px );
   -webkit-backdrop-filter: blur( 12px );
   border-radius: 10px;
   border: 2px solid skyblue;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 20px 25px;
   color: white;
   width: 500px !important;
 }
@@ -131,7 +131,7 @@ body{
   transform: translate3D(-12%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 10 * -0.3px));
 } */
 .viewport .scene3D-container .scene3D > div:nth-child(1) {
-  transform: translate3D(10%, -36%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -0.1px));
+  transform: translate3D(10%, -20%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -0.1px));
 }
 .viewport .scene3D-container .scene3D > div:nth-child(2) {
   transform: translate3D(10%, -22%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -0.25px));
@@ -162,7 +162,6 @@ body{
 
 </body>
 <script>
-let films = [];
 
 const perspectiveOrigin = {
   x: parseFloat(
@@ -178,35 +177,34 @@ const perspectiveOrigin = {
   maxGap: 10
 };
 
-function createFilmItem(film) {
-  return `<div class="Card ">
-    <h2>${film.title}</h2>
-    <p>Year: ${film.release_date}</p>
-    <p>Director: ${film.director}</p>
-    <p>${film.description}</p>
+function createFilmItem(story) {
+  return `<div class="Card">
+    <h2>${story.title}</h2>
+    <p>Year: ${story.release_date}</p>
+    <p>${story.description}</p>
   </div>`;
 }
 
-let fil = [
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
-  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+let stories = [
+  {title: 'G-Designer', release_date:'2003', description: 'JSP/Servlet, 92% Productivity Hike'},
+  {title: 'S-Designer Initilaized', release_date:'2008', description: 'S-Deginer was born'},
+  {title: 'S-Designer Reday to Fly', release_date:'2011', description: 'S-Designer Reaching out to skies'},
+  {title: '40+ Success Stories', release_date:'2011-2020', description: 'Great Success stories'},
+  {title: 'LCNC Revolution', release_date:'2020', description: 'LCNC Revolution Started'},
+  {title: 'iBlink Incorporation', release_date:'2021', description: 'iBlink Incorporation'},
 ]
 
-function appendFilms(films) {
-  const filmsEl = document.querySelector(".viewport .scene3D");
-  let filmsNodes = [];
+function appendFilms(stories) {
+  const storyEl = document.querySelector(".viewport .scene3D");
+  let storyNodes = [];
 
-  for (film of films) {
-    filmsNodes.push(createFilmItem(film));
+  for (story of stories) {
+    storyNodes.push(createFilmItem(story));
   }
 
-  filmsEl.innerHTML = filmsNodes.join(" ");
+  storyEl.innerHTML = storyNodes.join(" ");
 }
-appendFilms(fil)
+appendFilms(stories)
 window.addEventListener("scroll", moveCamera);
 // window.addEventListener("mousemove", moveCameraAngle);
 setSceneHeight();
@@ -219,7 +217,7 @@ function moveCamera() {
 
 
 function setSceneHeight() {
-  const numberOfItems = films.length;
+  const numberOfItems = stories.length;
   const itemZ = parseFloat(
     getComputedStyle(document.documentElement).getPropertyValue("--itemZ")
   );
