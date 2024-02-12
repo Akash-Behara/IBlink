@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Parallax Timeline</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+ @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:900");
+ :root {
+  --scenePerspective: 1;
+  --scenePerspectiveOriginX: 50;
+  --scenePerspectiveOriginY: 30;
+  --itemZ: 2;
+  --cameraSpeed: 150;
+  --cameraZ: 0;
+  --viewportHeight: 0;
+}
+body{
+  /* height: 100vh; */
+  background: #000;
+}
+
+.viewport {
+  height: calc(var(--viewportHeight) * 1px);
+}
+
+.viewport .scene3D-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
+  perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
+  will-change: perspective-origin;
+  transform: translate3d(0, 0, 0);
+}
+
+.viewport .scene3D-container .scene3D {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--cameraZ) * 1px));
+  will-change: transform;
+}
+
+.viewport .scene3D-container .scene3D > div {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 40%;
+}
+@media only screen and (min-width: 600px) {
+  .viewport .scene3D-container .scene3D > div {
+    width: 45%;
+  }
+}
+.viewport .scene3D-container .scene3D > div:nth-child(2n) {
+  left: 0;
+}
+.viewport .scene3D-container .scene3D > div:nth-child(2n+1) {
+  right: 0;
+}
+.viewport .scene3D-container .scene3D > div:nth-child(0) {
+  transform: translate3D(-12%, -30%, calc(var(--itemZ) * var(--cameraSpeed) * 0 * -1px));
+}
+.viewport .scene3D-container .scene3D > div:nth-child(1) {
+  transform: translate3D(13%, -36%, calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px));
+}
+.viewport .scene3D-container .scene3D > div:nth-child(2) {
+  transform: translate3D(14%, -22%, calc(var(--itemZ) * var(--cameraSpeed) * 2 * -1px));
+}
+.viewport .scene3D-container .scene3D > div:nth-child(3) {
+  transform: translate3D(19%, -15%, calc(var(--itemZ) * var(--cameraSpeed) * 3 * -1px));
+}
+.viewport .scene3D-container .scene3D > div:nth-child(4) {
+  transform: translate3D(-21%, -20%, calc(var(--itemZ) * var(--cameraSpeed) * 4 * -1px));
+}
+.viewport .scene3D-container .scene3D > div:nth-child(5) {
+  transform: translate3D(14%, -18%, calc(var(--itemZ) * var(--cameraSpeed) * 5 * -1px));
+}/*# sourceMappingURL=scrollanim.css.map */
+
+  </style>
+</head>
+<body>
+  <div class="viewport">
+    <div class="scene3D-container">
+      <div class="scene3D">
+        <!-- <div>Card1</div>
+        <div>Card2</div> -->
+        <!--Etc.-->
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+ let films = [];
+
+const perspectiveOrigin = {
+  x: parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspectiveOriginX"
+    )
+  ),
+  y: parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspectiveOriginY"
+    )
+  ),
+  maxGap: 10
+};
+
+function createFilmItem(film) {
+  return `<div class="text-white bg-danger ">
+    <h2>${film.title}</h2>
+    <p>Year: ${film.release_date}</p>
+    <p>Director: ${film.director}</p>
+    <p>${film.description}</p>
+  </div>`;
+}
+
+let fil = [
+  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+  {title: 'hellow o', release_date:'release_date', director: 'director', description: 'description'},
+]
+
+function appendFilms(films) {
+  const filmsEl = document.querySelector(".viewport .scene3D");
+  let filmsNodes = [];
+
+  for (film of films) {
+    filmsNodes.push(createFilmItem(film));
+  }
+
+  filmsEl.innerHTML = filmsNodes.join(" ");
+}
+appendFilms(fil)
+window.addEventListener("scroll", moveCamera);
+// window.addEventListener("mousemove", moveCameraAngle);
+setSceneHeight();
+
+
+function moveCamera() {
+  document.documentElement.style.setProperty("--cameraZ", window.pageYOffset);
+}
+
+console.log('d', document.documentElement)
+
+function setSceneHeight() {
+  const numberOfItems = films.length;
+  const itemZ = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--itemZ")
+  );
+  const scenePerspective = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--scenePerspective"
+    )
+  );
+  const cameraSpeed = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--cameraSpeed")
+  );
+
+  const height =
+    2500 +
+    scenePerspective * cameraSpeed +
+    itemZ * cameraSpeed * numberOfItems;
+
+  document.documentElement.style.setProperty("--viewportHeight", height);
+}
+
+// function moveCameraAngle(event) {
+//   const xGap =
+//     (((event.clientX - window.innerWidth / 2) * 100) /
+//       (window.innerWidth / 2)) *
+//     -1;
+//   const yGap =
+//     (((event.clientY - window.innerHeight / 2) * 100) /
+//       (window.innerHeight / 2)) *
+//     -1;
+//   const newPerspectiveOriginX =
+//     perspectiveOrigin.x + (xGap * perspectiveOrigin.maxGap) / 100;
+//   const newPerspectiveOriginY =
+//     perspectiveOrigin.y + (yGap * perspectiveOrigin.maxGap) / 100;
+
+//   document.documentElement.style.setProperty(
+//     "--scenePerspectiveOriginX",
+//     newPerspectiveOriginX
+//   );
+//   document.documentElement.style.setProperty(
+//     "--scenePerspectiveOriginY",
+//     newPerspectiveOriginY
+//   );
+// }
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</html>

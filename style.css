@@ -454,6 +454,13 @@ canvas {
 }
 
 
+.Timeline__Iframe{
+    height: 60vh;
+    width: 100%;
+    background: #000;
+}
+
+
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
