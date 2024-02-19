@@ -1,0 +1,72 @@
+
+
+.mountains {
+  padding: 0 10%;
+}
+.mountains .mountain {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3%;
+}
+.mountains .range {
+  overflow: hidden;
+}
+.mountains .range:nth-child(1) .mountain {
+  margin-top: 6%;
+  margin-bottom: -15%;
+  margin-left: -8%;
+}
+.mountains .range:nth-child(1) .mountain:nth-child(1) {
+  padding: 9%;
+  background: linear-gradient(23deg, #607c92 70%, #506779 70%);
+  margin-left: 12%;
+}
+.mountains .range:nth-child(1) .mountain:nth-child(2) {
+  padding: 13%;
+  background: linear-gradient(25deg, #607c92 68%, #506779 68%);
+}
+.mountains .range:nth-child(1) .mountain:nth-child(3) {
+  padding: 12%;
+  background: linear-gradient(-17deg, #607c92 90%, transparent 80%), linear-gradient(25deg, #607c92 68%, #506779 68%);
+}
+.mountains .range:nth-child(1) .mountain:nth-child(4) {
+  padding: 13.5%;
+  background: linear-gradient(75deg, transparent 50%, #506779 50%), linear-gradient(14deg, #607c92 80%, #506779 80%);
+}
+.mountains .range:nth-child(2) {
+  margin-top: -17%;
+}
+.mountains .range:nth-child(2) .mountain {
+  margin-top: 6%;
+  margin-bottom: -11.5%;
+  margin-left: -4%;
+}
+.mountains .range:nth-child(2) .mountain:nth-child(1) {
+  padding: 6.3%;
+  background: linear-gradient(13deg, #8795a0 80%, #70818e 80%);
+  margin-left: 8%;
+}
+.mountains .range:nth-child(2) .mountain:nth-child(2) {
+  padding: 10%;
+  background: linear-gradient(0deg, #8795a0 88%, transparent 80%), linear-gradient(37.5deg, #8795a0 56.5%, #70818e 56.5%);
+  margin-left: -3%;
+}
+.mountains .range:nth-child(2) .mountain:nth-child(3) {
+  padding: 11.5%;
+  background: linear-gradient(10deg, #8795a0 85%, #70818e 85%);
+  margin-left: -7%;
+}
+.mountains .range:nth-child(2) .mountain:nth-child(4) {
+  padding: 10%;
+  background: linear-gradient(-10deg, #8795a0 80%, transparent 80%), linear-gradient(25deg, #8795a0 68%, #70818e 68%);
+}
+.mountains .range:nth-child(2) .mountain:nth-child(5) {
+  padding: 5.7%;
+  background: linear-gradient(13deg, #8795a0 80%, #70818e 80%);
+}
+.mountains .range:nth-child(2) .mountain:nth-child(6) {
+  padding: 7.3%;
+  background: linear-gradient(13deg, #8795a0 80%, #70818e 80%);
+}
